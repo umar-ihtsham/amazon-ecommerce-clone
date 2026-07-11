@@ -1,4 +1,4 @@
-import {cart,addToCart,buttonAnimation} from "../data/cart.js";
+import {cart,addToCart,buttonAnimation,updatecartQuantity} from "../data/cart.js";
 import {products} from "../data/products.js";
 import {formatCurrency} from "./utils/money.js";
 
@@ -59,20 +59,6 @@ products.forEach((product)=>{
 })
 
 /* updates the cartQuantity */
-
-
-function updatecartQuantity(){
-  let cartQuantity=0;
-  cart.forEach((cartitem)=>{
-    cartQuantity+=cartitem.quantity
-  });
-  return cartQuantity
-}
-
-
-
-
-
 document.querySelector(".Js-products-grid").innerHTML=ProductsHTML;
 
 document.querySelectorAll(".Js-add-to-cart")
