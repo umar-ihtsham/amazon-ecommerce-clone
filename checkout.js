@@ -16,6 +16,8 @@ function cartitems(){
 }
 cartitems()
 
+function renderOrderSummary(){
+
 let cartSummaryHTML='';
 
 cart.forEach((cartitem)=>{
@@ -114,7 +116,7 @@ function deliveryOptionsHTML(matchingproduct,cartitem){
           ${isChecked?'checked':''}
             name="delivery-option-${matchingproduct.id}">
           <div>
-            <div class="delivery-option-date Js-delivery-option-date">
+            <div class="delivery-option-date ">
               ${dateString}
             </div>
             <div class="delivery-option-price">
@@ -172,5 +174,10 @@ document.querySelectorAll('.Js-delivery-option').forEach((element)=>{
     element.addEventListener('click',()=>{
       const {productId,deliveryOptionId}=element.dataset;
       updateDeliveryOption(productId,deliveryOptionId);
+      renderOrderSummary();
     })
 })
+}
+renderOrderSummary();
+
+
