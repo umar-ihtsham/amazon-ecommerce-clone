@@ -118,6 +118,19 @@
 .product-quantity .link-primary {
   margin-left: 3px;
 }
+.input{
+  display: none;
+  width: 30px;
+}
+.save-quantity-link{
+  display: none;
+}
+.is-editing-quantity .input{
+  display: initial;
+}
+.is-editing-quantity .save-quantity-link{
+  display: initial;
+}
 
 @media (max-width: 1000px) {
   .delivery-options {
