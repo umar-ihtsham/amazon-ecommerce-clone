@@ -6,11 +6,6 @@ import {deliveryOptions,getDeliveryOption} from '../data/deliveryOptions.js';
 import { renderPaymentSummary } from "./paymentSummary.js";
 
 
-const today=dayjs()
-const deliveryDate=today.add(7,'days')
-console.log(deliveryDate.format('dddd, MMMM D'))
-
-
 
 function cartitems(){  
     let cartQuantity=updatecartQuantity();
@@ -135,6 +130,7 @@ document.querySelectorAll(".Js-delete-link").forEach((link)=>{
         const container=document.querySelector(`.Js-cart-item-container-${productId}`)
         container.remove()
         cartitems()
+        renderPaymentSummary();
         console.log(container)
         console.log(cart)
     })

@@ -59,5 +59,4 @@ export function renderPaymentSummary(){
 
     let cartQuantity=updatecartQuantity();
     document.querySelector('.Js-cart-quantity').innerText=`items (${cartQuantity})`
-    console.log(paymentSummaryHTML)
 }
