@@ -53,6 +53,7 @@ const dateString=deliveryDate.format('dddd, MMMM D');
                 <div class="product-quantity">
                     <span>
                     Quantity: <span class="quantity-label Js-quantity-label">${cartitem.quantity}</span>
+                              <span><input type="number" value="5" class="input"></input></span>
                     </span>
                     <span class="update-quantity-link link-primary Js-update-quantity-link"
                     data-product-id="${matchingproduct.id}">
@@ -62,7 +63,6 @@ const dateString=deliveryDate.format('dddd, MMMM D');
                     data-product-id="${matchingproduct.id}">
                     Save
                     </span>
-                    <input type="text" class="input"></input>
                     <span class="delete-quantity-link link-primary Js-delete-link"
                     data-product-id="${matchingproduct.id}">
                     Delete
@@ -131,8 +131,6 @@ document.querySelectorAll(".Js-delete-link").forEach((link)=>{
         container.remove()
         cartitems()
         renderPaymentSummary();
-        console.log(container)
-        console.log(cart)
     })
 })
 
@@ -154,8 +152,6 @@ document.querySelectorAll(".Js-save-quantity-link").forEach((link)=>{
     document.querySelector(`.Js-cart-item-container-${productId} .Js-quantity-label`).innerText=newQuantity
     cartitems()
     renderPaymentSummary()
-    console.log(newQuantity)
-    
   })
 })
 
