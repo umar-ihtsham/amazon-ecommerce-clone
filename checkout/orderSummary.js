@@ -7,11 +7,10 @@ import { renderPaymentSummary } from "./paymentSummary.js";
 
 
 
-function cartitems(){  
+export function cartitems(){  
     let cartQuantity=updatecartQuantity();
     document.querySelector(".Js-cart-quantity-checkout").innerText=`${cartQuantity} items`
 }
-cartitems()
 
 export function renderOrderSummary(){
 
@@ -34,7 +33,9 @@ const deliveryDate=today.add(
 )
 const dateString=deliveryDate.format('dddd, MMMM D');
 
-    cartSummaryHTML+=`<div class="cart-item-container Js-cart-item-container-${matchingproduct.id}">
+    cartSummaryHTML+=`<div class="cart-item-container 
+          Js-cart-item-container
+          Js-cart-item-container-${matchingproduct.id}">
             <div class="delivery-date">
                 Delivery date: ${dateString}
             </div>
@@ -50,10 +51,10 @@ const dateString=deliveryDate.format('dddd, MMMM D');
                 <div class="product-price">
                     $${formatCurrency(matchingproduct.priceCents)}
                 </div>
-                <div class="product-quantity">
+                <div class="product-quantity Js-product-quantity-${matchingproduct.id}">
                     <span>
                     Quantity: <span class="quantity-label Js-quantity-label">${cartitem.quantity}</span>
-                              <span><input type="number" value="5" class="input"></input></span>
+                              <span><input type="number" class="input"></input></span>
                     </span>
                     <span class="update-quantity-link link-primary Js-update-quantity-link"
                     data-product-id="${matchingproduct.id}">
@@ -63,7 +64,7 @@ const dateString=deliveryDate.format('dddd, MMMM D');
                     data-product-id="${matchingproduct.id}">
                     Save
                     </span>
-                    <span class="delete-quantity-link link-primary Js-delete-link"
+                    <span class="delete-quantity-link link-primary Js-delete-link Js-delete-link-${matchingproduct.id}"
                     data-product-id="${matchingproduct.id}">
                     Delete
                     </span>
@@ -166,7 +167,6 @@ document.querySelectorAll('.Js-delivery-option').forEach((element)=>{
 })
 
 }
-renderOrderSummary();
-renderPaymentSummary();
+
 
 
