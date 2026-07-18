@@ -11,13 +11,14 @@ export function getProduct(productId){
 }
 
 
-class Product{
+export class Product{
   id;
   image;
   name;
   rating;
   priceCents;
   keywords;
+  type;
 
 
   constructor(productDetails){
@@ -27,6 +28,7 @@ class Product{
     this.rating=productDetails.rating;
     this.priceCents=productDetails.priceCents;
     this.keywords=productDetails.keywords;
+    this.type=productDetails.type;
   }
 
   getStarsUrl(){
@@ -41,7 +43,7 @@ class Product{
   }
 }
 
-class Clothing extends Product{
+export class Clothing extends Product{
   sizeChartLink;
 
   constructor(productDetails){
@@ -55,6 +57,11 @@ class Clothing extends Product{
     </a>`
   }
 }
+
+
+
+//setInterval(()=>{console.log(new Date().toLocaleTimeString())},1000);
+
 
 export const products = [
   {
