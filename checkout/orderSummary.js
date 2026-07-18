@@ -49,7 +49,7 @@ const dateString=deliveryDate.format('dddd, MMMM D');
                     ${matchingproduct.name}
                 </div>
                 <div class="product-price">
-                    $${formatCurrency(matchingproduct.priceCents)}
+                    ${matchingproduct.getPrice()}
                 </div>
                 <div class="product-quantity Js-product-quantity-${matchingproduct.id}">
                     <span>
