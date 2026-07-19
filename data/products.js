@@ -85,6 +85,10 @@ export class Appliance extends Product{
   }
 
 
+
+
+
+
 export let products=[];
 
 export function loadProducts(fun){
@@ -98,8 +102,6 @@ export function loadProducts(fun){
             }else{
               return new Product(productDetails);}
             });
-            
-      console.log('load products')
       fun();
       });
   xhr.open('GET','https://supersimplebackend.dev/products');
