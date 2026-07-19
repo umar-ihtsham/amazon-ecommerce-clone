@@ -1,6 +1,8 @@
 import { cartitems, renderOrderSummary } from "./checkout/orderSummary.js";
 import { renderPaymentSummary } from "./checkout/paymentSummary.js";
+import './data/backend-practice.js'
 //import './data/cart-class.js'
+//import './data/car.js'
 
 cartitems();
 renderOrderSummary();
