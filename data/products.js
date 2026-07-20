@@ -103,9 +103,18 @@ export function loadProductsFetch(){
             }else{
               return new Product(productDetails);}
             });
-  })
+  }).catch(()=>{
+      console.log('unexpected Error. Try again after sometime')
+  });
   return promise;
 };
+
+/* const xhr=new XMLHttpRequest;
+xhr.addEventListener('error',()=>{
+  console.log('unexpected Error');
+})
+xhr.open('GET','https://errorsupersimplebackend.dev/products');
+xhr.send(); */
 
 /*
 loadProductsFetch().then(()=>{
