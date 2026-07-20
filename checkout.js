@@ -19,6 +19,3 @@ async function loadPage(){
 };
 
 loadPage();
-    
-
-
