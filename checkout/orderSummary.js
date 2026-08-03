@@ -148,9 +148,14 @@ document.querySelectorAll(".Js-save-quantity-link").forEach((link)=>{
     const container=document.querySelector(`.Js-cart-item-container-${productId}`)
     let newQuantity=Number(document.querySelector(`.Js-cart-item-container-${productId} input`).value)
     container.classList.remove("is-editing-quantity")
+    if (newQuantity<=0){
     updateQuantity(productId,newQuantity)
-
-    document.querySelector(`.Js-cart-item-container-${productId} .Js-quantity-label`).innerText=newQuantity
+      const container=document.querySelector(`.Js-cart-item-container-${productId}`)
+        container.remove()
+    }else{
+      updateQuantity(productId,newQuantity);
+      document.querySelector(`.Js-cart-item-container-${productId} .Js-quantity-label`).innerText=newQuantity
+    }
     cartitems()
     renderPaymentSummary()
   })

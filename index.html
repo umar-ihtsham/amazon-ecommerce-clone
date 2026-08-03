@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tracking</title>
+    <title>Amazon Project</title>
 
     <!-- This code is needed for responsive design to work.
       (Responsive design = make the website look good on
@@ -16,7 +16,7 @@
     <!-- Here are the CSS files for this page. -->
     <link rel="stylesheet" href="styles/shared/general.css">
     <link rel="stylesheet" href="styles/shared/amazon-header.css">
-    <link rel="stylesheet" href="styles/pages/tracking.css">
+    <link rel="stylesheet" href="styles/pages/amazon.css">
   </head>
   <body>
     <div class="amazon-header">
@@ -30,10 +30,10 @@
       </div>
 
       <div class="amazon-header-middle-section">
-        <input class="search-bar" type="text" placeholder="Search">
+        <input class="search-bar Js-search-bar" type="text" placeholder="Search">
 
-        <button class="search-button">
-          <img class="search-icon" src="images/icons/search-icon.png">
+        <button class="search-button Js-search-button">
+          <img class="search-icon Js-search-icon" src="images/icons/search-icon.png">
         </button>
       </div>
 
@@ -45,17 +45,20 @@
 
         <a class="cart-link header-link" href="checkout.html">
           <img class="cart-icon" src="images/icons/cart-icon.png">
-          <div class="cart-quantity Js-tracking-cart-quantity"></div>
+          <div class="cart-quantity Js-cart-quantity"></div>
           <div class="cart-text">Cart</div>
         </a>
       </div>
     </div>
+    
+    <div class="main">
+      <div class="products-grid Js-products-grid">
 
-    <div class="main Js-main">
-      
+      </div>
     </div>
 
 
-    <script type="module" src="./trackingPage.js"></script>
+    
+    <script type="module" src="./amazon.js"></script>
   </body>
 </html>

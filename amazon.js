@@ -3,15 +3,26 @@ import {products,loadProductsFetch} from "../data/products.js";
 import {formatCurrency} from "./utils/money.js";
 
 
-loadProductsFetch().then(()=>{
-  renderProductsGrid();
-})
+loadProductsFetch().then(() => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const search = urlParams.get("search_Query");
+
+  if (search) {
+    const filteredProducts = products.filter(product =>
+      product.name.toLowerCase().includes(search.toLowerCase())
+    );
+
+    renderProductsGrid(filteredProducts);
+  } else {
+    renderProductsGrid(products);
+  }
+});
 
 
-function renderProductsGrid(){
+function renderProductsGrid(productsTorender=products){
 
         let ProductsHTML=''
-        products.forEach((product)=>{
+        productsTorender.forEach((product)=>{
 
           ProductsHTML+=`
           <div class="product-container">
@@ -93,3 +104,23 @@ function renderProductsGrid(){
         });
 
 };
+
+
+
+document.querySelector('.Js-search-button').addEventListener('click',()=>{
+
+  let searchQuery=document.querySelector('.Js-search-bar').value;
+  window.location.href=`index.html?search_Query=${searchQuery}`;
+/*   let url=window.location.search;
+  let search=new URLSearchParams.get(search_Query);
+
+
+  loadProductsFetch().then(()=>{
+    let filteredProducts=products.filter((product)=>{
+      return product.name.toLowerCase().includes(search.toLowerCase());
+    })
+  }).then((products)=>{
+    renderProductsGrid(filteredProducts);
+  }) */
+})
+
