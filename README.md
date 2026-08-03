@@ -232,7 +232,7 @@ GitHub:
 https://github.com/umar-ihtsham
 
 LinkedIn:
-(Add your LinkedIn profile)
+https://www.linkedin.com/in/muhammad-umar-ihtsham-2249553b5/
 
 ---
 
